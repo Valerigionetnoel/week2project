@@ -1,61 +1,78 @@
-* {
-    background-color: rgb(234, 252, 193);
-    
+/*These are variable for the colors.*/
+:root {
+    --dark: darkblue;
+    --white: white;
 }
 
+/*These element apply to all the page.*/
+* {
+    background-color: rgb(234, 252, 193);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*This does change to the header, like instead of display:block it's display:flex so 
+that I can change the order of the h1 and nav to be in a row instead of in a column. It
+also spread them to each end of the screen.*/
 header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border: solid;
-    background-color: darkblue;
-    color: white;
+    background-color: var(--dark);
+    color: var(--white);
 }
 
+/*It change the color to be var dark and var white.*/
 header h1 {
-    background-color: darkblue;
-    color: white;
+    background-color: var(--dark);
+    color: var(--white);
 }
 
+/*Does the same as header h1.*/
 header nav {
-    background-color: darkblue;
-    color: white;
+    background-color: var(--dark);
+    color: var(--white);
 }
 
+/*Does the same as header h1.*/
 header nav a{
-    background-color: darkblue;
-    color: white;
+    background-color: var(--dark);
+    color: var(--white);
 }
 
+/*Put space on the left of the h1 element.*/
 h1 {
-    padding-left:5px;
+    padding-left: 5px;
 }
 
+/*Makes the nav into a row instead of a column.*/
 nav {
     display:flex;
     align-items: center;
     padding: 5px;
 }
 
+/*Put padding around the words of the nav.*/
 nav a {
-    display: flex;
-    flex-wrap: wrap;
     padding: 5px
 }
 
+/*The main element of the page takes 33% of the real estate of the screen.
+The inline block means it make the items horizontally instead of vertically. 
+Source: https://www.w3schools.com/css/css_inline-block.asp#:~:text=One%20common%20use%20for%20display,items%20horizontally%20instead%20of%20vertically.*/
 main {
     width: 33%;
     display: inline-block;
 }
 
+/*Make the container a flex, which make the paragraphe next to the photo.*/
 .profile{
     display: flex;
-    flex-direction: row;
     padding: 5px;
     border: dotted;
-    max-width: 500px;
 }
 
+/*Some settings for the photos in the page.*/
 img {
     max-height: 300px;
     background-color: rgb(139, 139, 139);
@@ -63,92 +80,116 @@ img {
     border: solid;
     border-radius: 5px;
     border-color: black;
-    box-shadow: 5px 5px 5px;
+    box-shadow: 5px 5px 5px black;
     margin-right: 20px;
 }
 
+/*Make the photo zoom.*/
 .img1:hover {
     transform: scale(1.1);
 }
 
+/*Sets the max width of the first project image.*/
 .img1 {
-    max-width: 300px;
+    max-width: 400px;
 }
 
+/*Make the photo zoom.*/
+.img2:hover {
+    transform: scale(1.1);
+}
+
+/*Sets the max width of the other image in the page.*/
+.img2{
+    max-width: 250px;
+}
+
+/*Makes the paragraph next to my photo center in the profile.*/
 .para1 {
-    max-width: 300px;
     padding-top: 100px;
 }
 
+/*Makes the paragraph under the projects centered.*/
 .para2 {
     text-align: center;
 }
 
+/*Float set the aside next to the profile. It use 67% of the real estate of the screen.
+It wraps to the next row when the screen get smaller.*/
 aside {
     width: 67%;
     float: right;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+/*Center the h2 to the container that are my projects.*/
 h2 {
     text-align: center;
 }
 
+/*Puts padding around the container that are my projects.*/
 article {
     padding-left: 10px;
     padding-right: 10px;
 }
 
+/*Center the text at the end of the page, footer.*/
 footer {
     text-align: center;
 }
 
+/*When the sceen become smaller then 1000px, these properties change too.*/
 @media screen and (max-width: 1000px) {
+ 
+    /*The header becomes a column, so the title and the nav goes one under then other. It also center the h1.*/
     header {
         flex-direction: column;
         align-items: center;
     }
 
+    /*Make the nav into a column.*/
     nav {
         flex-direction: column;
     }
 
+    /*Make the width of the container the whole screen. Also put the h2 over the container.*/
     main {
-        width:auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: auto;
+        display: block;
     }
 
+    /*Puts the photo and the paragraph one over then other and center it.*/
     .profile {
         flex-direction: column;
         align-items: center;
-        width:-webkit-fill-available;
     }
+
+    /*Set the width of the photos to 200px.*/
     img {
-        display: flex;
         width: 200px;
     }
 
-     .photo1{
+    /*Center the photos to the screen.*/
+    .photo1{
         display: flex;
         justify-content: center;
     }
 
+    /*Sets the padding on top of the paragraph in the my profile section and center it.*/
     .para1 {
-        padding-top:20px;
+        padding-top: 20px;
         text-align: center;
     }
 
+    /*width make it take the whole screen, float remove the float right from before and the flex direction makes it one over the other.*/
     aside {
-        width:auto;
-        float:inherit;
+        width: auto;
+        float: none;
         flex-direction: column;
     }
 
+    /*Center the text under the projects.*/
     .para2 {
         text-align: center;
     }

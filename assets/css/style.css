@@ -57,11 +57,26 @@ nav a {
     padding: 5px
 }
 
-/*The main element of the page takes 33% of the real estate of the screen.
+aside {
+    width: 19%;
+    height: 100%;
+    border-right: solid 5px;
+    float: left;
+}
+
+.proj {
+    padding-top: 335px;
+}
+
+.conta {
+    padding-top: 870px;
+}
+
+/*The main element of the page takes 100% of the real estate of the screen.
 The inline block means it make the items horizontally instead of vertically. 
 Source: https://www.w3schools.com/css/css_inline-block.asp#:~:text=One%20common%20use%20for%20display,items%20horizontally%20instead%20of%20vertically.*/
 main {
-    width: 33%;
+    width: 80%;
     display: inline-block;
 }
 
@@ -74,7 +89,6 @@ main {
 
 /*Some settings for the photos in the page.*/
 img {
-    max-height: 300px;
     background-color: rgb(139, 139, 139);
     padding: 5px ;
     border: solid;
@@ -91,7 +105,7 @@ img {
 
 /*Sets the max width of the first project image.*/
 .img1 {
-    max-width: 400px;
+    max-width: 100%;
 }
 
 /*Make the photo zoom.*/
@@ -104,6 +118,10 @@ img {
     max-width: 250px;
 }
 
+.img3 {
+    max-height: 300px;
+}
+
 /*Makes the paragraph next to my photo center in the profile.*/
 .para1 {
     padding-top: 100px;
@@ -114,11 +132,10 @@ img {
     text-align: center;
 }
 
-/*Float set the aside next to the profile. It use 67% of the real estate of the screen.
+/*Float set the aside next to the profile. It use 80% of the real estate of the screen.
 It wraps to the next row when the screen get smaller.*/
-aside {
-    width: 67%;
-    float: right;
+section {
+    width: 80%;  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -153,6 +170,10 @@ footer {
         flex-direction: column;
     }
 
+    aside {
+        display: none;
+    }
+
     /*Make the width of the container the whole screen. Also put the h2 over the container.*/
     main {
         width: auto;
@@ -183,7 +204,7 @@ footer {
     }
 
     /*width make it take the whole screen, float remove the float right from before and the flex direction makes it one over the other.*/
-    aside {
+    section {
         width: auto;
         float: none;
         flex-direction: column;

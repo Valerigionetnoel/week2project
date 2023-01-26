@@ -57,6 +57,7 @@ nav a {
     padding: 5px
 }
 
+/*Put the aside to the left and make it take 19% of the screen real estate. Also put a solid border on the right.*/
 aside {
     width: 19%;
     height: 100%;
@@ -64,15 +65,16 @@ aside {
     float: left;
 }
 
+/*Put the "my projects" down.*/
 .proj {
     padding-top: 335px;
 }
-
+/*Put the "contact me" down.*/
 .conta {
-    padding-top: 870px;
+    padding-top: 1100px;
 }
 
-/*The main element of the page takes 100% of the real estate of the screen.
+/*The main element of the page takes 80% of the real estate of the screen.
 The inline block means it make the items horizontally instead of vertically. 
 Source: https://www.w3schools.com/css/css_inline-block.asp#:~:text=One%20common%20use%20for%20display,items%20horizontally%20instead%20of%20vertically.*/
 main {
@@ -80,7 +82,7 @@ main {
     display: inline-block;
 }
 
-/*Make the container a flex, which make the paragraphe next to the photo.*/
+/*Make the container a flex, which make the paragraph next to the photo in my profile.*/
 .profile{
     display: flex;
     padding: 5px;
@@ -118,6 +120,7 @@ img {
     max-width: 250px;
 }
 
+/*Sets the max height of my profile photo.*/
 .img3 {
     max-height: 300px;
 }
@@ -132,7 +135,7 @@ img {
     text-align: center;
 }
 
-/*Float set the aside next to the profile. It use 80% of the real estate of the screen.
+/*It use 80% of the real estate of the screen.
 It wraps to the next row when the screen get smaller.*/
 section {
     width: 80%;  
@@ -170,6 +173,7 @@ footer {
         flex-direction: column;
     }
 
+    /*Hide the aside while on smaller screen.*/
     aside {
         display: none;
     }
